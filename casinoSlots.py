@@ -31,4 +31,12 @@ class SlotMachine:
         self.current_stake = stake
         self.current_jackpot = jackpot
 
-   
+    @property
+    def keep_playing(self):
+        while(True):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            if self.current_jackpot <= 1:
+                print("Machine balance reset.")
+                self.current_jackpot = SlotMachine.INITIAL_JACKPOT
+
+           
